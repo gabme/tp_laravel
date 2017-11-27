@@ -21,3 +21,8 @@ Route::get('/faqs', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get("/productos", "ProductsController@index");
+
+Route::get("/agregarProducto", "ProductsController@add")->middleware("auth");
+Route::post("/agregarProducto", "ProductsController@store")->middleware("auth");

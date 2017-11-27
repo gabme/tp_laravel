@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>FAQ's | Vestidos de novia</title>
+<title>Vestidos de novia</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -15,7 +16,7 @@
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
+
 
 <!-- header -->
     <body>
@@ -30,44 +31,55 @@
             <nav class="navbar navbar-default">
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Home</a></li>
-                        <li> <a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Registrarse</a></li>
-                        <li><a href="{{ url('faqs') }}">FAQ's</a></li>
+                        <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/faqs">
+                            FAQs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/productos">
+                            Listado Vestidos
+                        </a>
+                    </li>
+                    
+                    @if (auth()->check())
+                        <li>
+                            <a style="color: red" href="/home">
+                            Perfil de: {{auth()->user()->nombre}}
+                            </a>
+                        </li>
+                        <li>
+                            
+                            <form method="post" action="/logout">
+                                {{csrf_field()}}
+                                <input type="submit" value="Logout" class="btn btn-link">
+                            </form>
+                            
+                        </li>
+                    @else
+                        <li>
+                            <a href="/register">
+                                Registración
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/login">
+                                Ingresá
+                            </a>
+                        </li>
+                    @endif
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
 </div>
- <!-- Authentication Links -->
-                        @guest
-                        
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
         @yield('content')
     </div>

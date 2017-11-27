@@ -1,95 +1,241 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.hyf')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+<!-- banner -->
+    <div class="banner" id="home1">
+        <div class="container">
+            <h3>ROSA CLARÁ, <span>Colección 2018</span></h3>
+        </div>
+    </div>
+<!-- //banner -->
 
-            .full-height {
-                height: 100vh;
-            }
+<!-- banner-bottom -->
+    <div class="banner-bottom">
+        <div class="container">
+            <div class="col-md-5 wthree_banner_bottom_left">
+                <div class="video-img">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                
+            </div>
+            <div class="col-md-7 wthree_banner_bottom_right">
+                <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Primavera</a></li>
+                        <li role="presentation"><a href="#skirts" role="tab" id="skirts-tab" data-toggle="tab" aria-controls="skirts">Verano</a></li>
+                        <li role="presentation"><a href="#sandals" role="tab" id="sandals-tab" data-toggle="tab" aria-controls="sandals">Calzado</a></li>
+                        <li role="presentation"><a href="#Accesorio" role="tab" id="Accesorio-tab" data-toggle="tab" aria-controls="Accesorio">Accesorios</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                            <div class="agile_ecommerce_tabs">
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/6.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Primavera</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/4.jpg" alt=" " class="img-responsive" />       
+                                    </div>
+                                    <h5><a href="">Primavera</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/5.jpg" alt=" " class="img-responsive" />       
+                                    </div>
+                                    <h5><a href="">Primavera</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="skirts" aria-labelledby="skirts-tab">
+                            <div class="agile_ecommerce_tabs">
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/8.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Verano</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/9.jpg" alt=" " class="img-responsive" />               
+                                    </div>
+                                    <h5><a href="">Verano</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/10.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Verano</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="sandals" aria-labelledby="sandals-tab">
+                            <div class="agile_ecommerce_tabs">
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Calzado</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Calzado</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/16.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Calzado</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="Accesorio" aria-labelledby="Accesorio-tab">
+                            <div class="agile_ecommerce_tabs">
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Accesorio</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Accesorio</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <img src="images/19.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                    <h5><a href="">Accesorio</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <p><span>$320</span> <i class="item_price">$250</i></p>
+                                        <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+        </div>
+    </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+<!-- new-products -->
+    <div class="new-products">
+        <div class="container">
+            <h3>Vestidos en Venta</h3>
+            <div class="agileinfo_new_products_grids">
+                <div class="col-md-3 agileinfo_new_products_grid">
+                    <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                        <div class="hs-wrapper hs-wrapper1">
+                            <img src="images/27.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <h5><a href="">Verano</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p><span>$320</span> <i class="item_price">$250</i></p>
+                            <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-3 agileinfo_new_products_grid">
+                    <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                        <div class="hs-wrapper hs-wrapper1">
+                            <img src="images/31.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <h5><a href="">Primavera</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p><span>$320</span> <i class="item_price">$250</i></p>
+                            <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 agileinfo_new_products_grid">
+                    <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                        <div class="hs-wrapper hs-wrapper1">
+                            <img src="images/37.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <h5><a href="">Primavera</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p><span>$320</span> <i class="item_price">$250</i></p>
+                            <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 agileinfo_new_products_grid">
+                    <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                        <div class="hs-wrapper hs-wrapper1">
+                            <img src="images/40.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <h5><a href="">Verano</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p><span>$320</span> <i class="item_price">$250</i></p>
+                            <p><a class="item_add" href="#">Añadir al carrito</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
             </div>
         </div>
-    </body>
+    </div>
+
+<!-- //new-products -->
+
+
+
+</body>
 </html>
+@endsection
