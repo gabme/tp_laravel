@@ -23,6 +23,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get("/productos", "ProductsController@index");
-
+Route::get("/productos/{id}", "ProductsController@show");
 Route::get("/agregarProducto", "ProductsController@add")->middleware("auth");
 Route::post("/agregarProducto", "ProductsController@store")->middleware("auth");
+Route::delete("/borrarProducto", "ProductsController@delete")->middleware("auth");
+
+Route::get("/marcas", "BrandsController@index");
+Route::get("/marcas/{id}", "BrandsController@show");
+
+Route::get("/categorias", "CategoriesController@index");
+Route::get("/categorias/{id}", "CategoriesController@show");
+
+
+

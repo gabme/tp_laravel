@@ -46,7 +46,6 @@
                             Listado Vestidos
                         </a>
                     </li>
-                    
                     @if (auth()->check())
                         <li>
                             <a style="color: red" href="/home">
@@ -54,12 +53,10 @@
                             </a>
                         </li>
                         <li>
-                            
                             <form method="post" action="/logout">
                                 {{csrf_field()}}
                                 <input type="submit" value="Logout" class="btn btn-link">
                             </form>
-                            
                         </li>
                     @else
                         <li>
@@ -76,13 +73,16 @@
                     </ul>
                 </div>
             </nav>
+
         </div>
     </div>
 </div>
+<div class="container">
+    @yield('content')
+</div>
 
 
-        @yield('content')
-    </div>
+
 <div class="footer">
         <div class="container">
             <div class="footer_grids">
