@@ -5,13 +5,13 @@
 <title>Vestidos de novia</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8" />
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
 
 
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/fasthover.css" rel="stylesheet" type="text/css" media="all" />
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ asset('css/fasthover.css') }}" rel="stylesheet" type="text/css" media="all" />
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap-3.1.1.min.jss') }}"></script>
 <link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
@@ -23,7 +23,7 @@
     <div class="header">
         <div class="container">
             <div class="header_logo">
-                <h1><a href="index.php">VESTIDOS DE NOVIA<span>Para Novias Modernas</span></a></h1>
+                <h1><a href="/">VESTIDOS DE NOVIA<span>Para Novias Modernas</span></a></h1>
             </div>
     </div>
     <div class="navigation">
@@ -43,7 +43,7 @@
                     </li>
                     <li>
                         <a href="/productos">
-                            Listado Vestidos
+                            Listado de Productos
                         </a>
                     </li>
                     @if (auth()->check())

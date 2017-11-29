@@ -14,16 +14,17 @@
 				</a>
 			</li>
 
-			<li>
+			<ul>
 			Descripcion: {{$product->description}}
-		</li>
-		<li>
+		</ul>
+		<ul>
 			Precio: $ {{$product->price}}
-		</li>
-		<li>
+		</ul>
+		<ul>
 			Tipo de Producto: {{$product->category_id}}
-		</li>
+		</ul>
 		<br>
 		@endforeach
 	</ul>
+	<?php echo $products->render(); ?>
 @endsection

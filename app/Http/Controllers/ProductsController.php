@@ -104,8 +104,15 @@ class ProductsController extends Controller
         return redirect("/productos/" . $producto->id);
     }
 
+    public function edit($id){
+        $product = Product::find($id);
+        $categories = Category::all();
+        $brands = Brand::all();
+        return view("editarProducto", compact("product","categories","brands"));
+    }
+
     public function index() {
-        $products = Product::all();
+        $products = Product::paginate(2);
 
         return view("listadoProductos", compact("products"));
     }

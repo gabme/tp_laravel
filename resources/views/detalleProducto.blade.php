@@ -25,17 +25,11 @@
             </a>
         </li>
     </ul>
-    @if ($inWishlist)
-        <form action="/quitarWishlist" method="POST">
+    @if (auth()->check())
+        <form action="/editarProducto/{{$product->id}}" method="GET">
             {{csrf_field()}}
             <input type="hidden" name="id" value="{{$product->id}}">
-            <input type="submit" name="" value="Quitar de Wishlist" class="btn btn-warning">
-        </form>
-    @else
-        <form action="/agregarWishlist" method="POST">
-            {{csrf_field()}}
-            <input type="hidden" name="id" value="{{$product->id}}">
-            <input type="submit" name="" value="Agregar a Wishlist" class="btn btn-primary">
+            <input type="submit" name="" value="Editar" class="btn btn-primary">
         </form>
     @endif
     <img src="/{{$product->image}}">

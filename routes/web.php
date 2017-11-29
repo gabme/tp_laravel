@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get("/productos", "ProductsController@index");
 Route::get("/productos/{id}", "ProductsController@show");
+Route::get("/editarProducto/{id}","Productscontroller@edit")->middleware("auth");
 Route::get("/agregarProducto", "ProductsController@add")->middleware("auth");
 Route::post("/agregarProducto", "ProductsController@store")->middleware("auth");
 Route::delete("/borrarProducto", "ProductsController@delete")->middleware("auth");
