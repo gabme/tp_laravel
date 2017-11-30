@@ -111,6 +111,38 @@ class ProductsController extends Controller
         return view("editarProducto", compact("product","categories","brands"));
     }
 
+    public function editedProduct(Request $request){
+        $reglas = [
+            "nombre" => "string",
+            "precio" => "numeric|min:0",
+            "descripcion" => "max:1000",
+            "imagen" => "image"
+        ];
+
+        $mensajes = [
+            "numeric" => "El campo :attribute debe ser un número",
+            "min" => "El campo :attribute tiene un mínimo de :min",
+            "max" => "El campo :attribute tiene un máximo de :max",
+            "image" => "El campo :attribute debe ser una imagen"
+        ];
+
+        $this->validate($request, $reglas, $mensajes);
+
+        $foto = $request->file("imagen");
+        if($foto){
+            $nombreFoto = $foto->store("public/products");
+
+            $nombreFoto = str_replace("public", "storage", $nombreFoto);
+        }
+
+        $producto = Product::find();
+
+
+
+        $producto->save();
+
+        return redirect("/productos/" . $producto->id);
+    }
     public function index() {
         $products = Product::paginate(2);
 

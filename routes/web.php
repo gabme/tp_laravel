@@ -27,6 +27,7 @@ Route::get("/productos/{id}", "ProductsController@show");
 Route::get("/editarProducto/{id}","Productscontroller@edit")->middleware("auth");
 Route::get("/agregarProducto", "ProductsController@add")->middleware("auth");
 Route::post("/agregarProducto", "ProductsController@store")->middleware("auth");
+Route::post("/productoEditado", "ProductsController@editedProduct")->middleware("auth");
 Route::delete("/borrarProducto", "ProductsController@delete")->middleware("auth");
 
 Route::get("/marcas", "BrandsController@index");

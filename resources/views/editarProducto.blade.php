@@ -13,26 +13,26 @@
             </ul>
         </div>
     @endif
-    <form action="/" method="POST" enctype="multipart/form-data">
+    <form action="/productoEditado" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
             <label for="nombre">
                 Nombre:
             </label>
-            <input class="form-control" type="text" name="nombre" value="{{old("nombre")}}">
+            <input class="form-control" type="text" name="nombre" value="{{$product->name or old("nombre")}}" placeholder="{{$product->name}}">
         </div>
         <div class="form-group">
             <label for="precio">
                 Precio:
             </label>
-            <input class="form-control" type="text" name="precio" value="{{old("precio")}}">
+            <input class="form-control" type="text" name="precio" value="{{$product->price or old("precio")}}" placeholder="{{$product->price}}">
         </div>
         <div class="form-group">
             <label for="descripcion">
                 Descripcion:
             </label>
-            <textarea class="form-control" name="descripcion">
-				{{old("descripcion")}}
+            <textarea class="form-control" name="descripcion" >
+				{{$product->description or old("descripcion")}}
 			</textarea>
         </div>
         <div class="form-group">
