@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-    <form action="/productoEditado" method="POST" enctype="multipart/form-data">
+    <form action="/productoEditado/{{$product->id}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
             <label for="nombre">

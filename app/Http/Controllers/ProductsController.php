@@ -111,7 +111,7 @@ class ProductsController extends Controller
         return view("editarProducto", compact("product","categories","brands"));
     }
 
-    public function editedProduct(Request $request){
+    public function editedProduct(Request $request,$id){
         $reglas = [
             "nombre" => "string",
             "precio" => "numeric|min:0",
@@ -133,11 +133,18 @@ class ProductsController extends Controller
             $nombreFoto = $foto->store("public/products");
 
             $nombreFoto = str_replace("public", "storage", $nombreFoto);
+        }else{
+            $nombreFoto = "";
         }
 
-        $producto = Product::find();
+        $producto = Product::find($id);
 
-
+        $producto->name = $request["nombre"];
+        $producto->price = $request["precio"];
+        $producto->description = $request["descripcion"];
+        $producto->category_id = $request["categoria"];
+        $producto->brand_id = $request["marca"];
+        $producto->image = $nombreFoto;
 
         $producto->save();
 

@@ -6,9 +6,6 @@
     </h2>
     <ul>
         <li>
-            Stock: {{$product->stock}}
-        </li>
-        <li>
             Precio: {{$product->price}}
         </li>
         <li>
